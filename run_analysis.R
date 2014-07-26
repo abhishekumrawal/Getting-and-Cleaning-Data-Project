@@ -65,12 +65,10 @@ tidy_data<-as.data.frame(tidy_data)
 tidy_data<-tidy_data[order(tidy_data[,1],tidy_data[,2]),]
 
 #Note: The final tidy data is named as tidy_data.
+
 #Exporting the Tidy Data.
-
-
-
-
-
+write.table(tidy_data,"tidy_data.txt")
+write.table(tidy_data,"tidy_data.csv")
 
 #Reading the activities for training data.
 body_acc_x_train<-read.table("./UCI HAR Dataset/train/Inertial Signals/body_acc_x_train.txt")
@@ -138,4 +136,3 @@ body_gyro_z<-rbind(body_gyro_z_train, body_gyro_z_test)
 total_acc_x<-rbind(total_acc_x_train, total_acc_x_test)
 total_acc_y<-rbind(total_acc_y_train, total_acc_y_test)
 total_acc_z<-rbind(total_acc_z_train, total_acc_z_test)
-
